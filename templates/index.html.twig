@@ -1,0 +1,20 @@
+{% extends 'base/base.html.twig' %}
+
+{% block title %}{% endblock %}
+{% block head %}{{ parent() }}{% endblock %}
+{% block header %}{{ parent() }}{% endblock %}
+
+{% block content %}
+    <div>{{ parent() }}</div>
+    <div id="home">
+        <div class="container">
+            <div class="row">
+                <h1>{{ nameProject }}</h1>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascript %}
+    {{ parent() }}
+{% endblock %}

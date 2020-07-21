@@ -1,0 +1,87 @@
+{% set nameProject = 'Share Promos' %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        {% block head %}
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <link rel="stylesheet" href="{{ asset('css/main.css') }}" />
+            <link rel="stylesheet" href="{{ asset('css/mmenu.css') }}" />
+            <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
+            <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}" />
+            <link rel="stylesheet/less" type="text/css" href="{{ asset('css/style.less') }}" />
+            <title>{{ nameProject }}{% block title %}{% endblock %}</title>
+            <script data-ad-client="ca-pub-9651920488791894" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        {% endblock %}
+    </head>
+    <body>
+        {% block header %}
+            <div id="header" class="header">
+                <a href="#menu"><span class="fa fa-bars"></span></a>
+                <a href="{{ path('index') }}" class="logo"><strong>{{ nameProject }}</strong></a>
+            </div>
+            <nav id="menu">
+                <ul>
+                    <li><a href="{{ path('index') }}">Inicio</a></li>
+                    <li>
+                        <a href="{{ path('games') }}">Games</a>
+                        <ul>
+                            <li><a href="{{ path('game_promotion') }}">Promoções de Games</a></li>
+                            <li><a href="{{ path('game_free') }}">Games Gratuitos</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="{{ path('currency') }}">Cotações de Moedas</a></li>
+                </ul>
+            </nav>
+        {% endblock %}
+{#        <div id="content">#}
+            {% block content %}<br><br><br><br>{% endblock %}
+{#        </div>#}
+
+        {% block footer %}
+            <footer>
+
+            </footer>
+        {% endblock %}
+        {% block javascript %}
+            <script src="{{ asset('js/jquery.min.js') }}"></script>
+            <script src="{{ asset('js/mmenu.js') }}"></script>
+            <script>
+                new Mmenu( document.querySelector('#menu'));
+                document.addEventListener( 'click', function( evnt ) {
+                    var anchor = evnt.target.closest('a[href^="#"]');
+                    if (anchor) {
+                        evnt.preventDefault();
+                    }
+                });
+            </script>
+            <script src="{{ asset('js/less.min.js') }}"></script>
+            <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+            <script>
+                $(document).ready(function(){
+                    $('.owl-carousel').owlCarousel({
+                        items : 4,
+                        loop:true,
+                        autoplay:true,
+                        autoplayTimeout:7500,
+                        autoplayHoverPause:true,
+                        nav:true,
+                        navText: ["<span class=\"fa-stack fa-lg\" aria-hidden=\"true\"><span class=\"show-for-sr\"></span><i class=\"fa fa-circle fa-stack-2x\"></i><i class=\"fa fa-chevron-left fa-stack-1x fa-inverse\" aria-hidden=\"true\"></i></span>","<span class=\"fa-stack fa-lg\" aria-hidden=\"true\"><span class=\"show-for-sr\"></span><i class=\"fa fa-circle fa-stack-2x\"></i><i class=\"fa fa-chevron-right fa-stack-1x fa-inverse\" aria-hidden=\"true\"></i></span>"],
+                        responsive:{
+                            0:{
+                                items:1
+                            },
+                            600:{
+                                items:3
+                            },
+                            1000:{
+                                items:5
+                            }
+                        }
+                    })
+                });
+            </script>
+        {% endblock %}
+    </body>
+</html>

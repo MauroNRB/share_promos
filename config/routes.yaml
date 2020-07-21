@@ -1,3 +1,19 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+index:
+    path: /
+    controller: App\Controller\indexController::show
+
+games:
+    path: /games
+    controller: App\Controller\Games\gameController::show
+
+game_promotion:
+    path: /games/promotion-games
+    controller: App\Controller\Games\promotionController::show
+
+game_free:
+    path: /games/free-games
+    controller: App\Controller\Games\freeController::show
+
+currency:
+    path: /currency
+    controller: App\Controller\Currency\currencyController::show
