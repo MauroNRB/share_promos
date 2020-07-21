@@ -2,16 +2,16 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Entity\ConstInfo;
 
 /**
  * @author Mauro Ribeiro
  * @since 2020-06-09
  */
-class indexController extends AbstractController
+class indexController extends Controller
 {
     public function show()
     {
-        return $this->render('index.html.twig');
+        return parent::show(ConstInfo::INDEX_HTML);
     }
 }

@@ -4,16 +4,16 @@ index:
 
 games:
     path: /games
-    controller: App\Controller\Games\gameController::show
+    controller: App\Controller\Games\GameController::show
 
 game_promotion:
     path: /games/promotion-games
-    controller: App\Controller\Games\promotionController::show
+    controller: App\Controller\Games\PromotionController::show
 
 game_free:
     path: /games/free-games
-    controller: App\Controller\Games\freeController::show
+    controller: App\Controller\Games\FreeController::show
 
 currency:
     path: /currency
-    controller: App\Controller\Currency\currencyController::show
+    controller: App\Controller\Currency\CurrencyController::show
